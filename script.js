@@ -1,4 +1,4 @@
-const RANDOM_QUOTE_API_URL = 'https://api.kanye.rest'
+const RANDOM_QUOTE_API_URL = 'https://go-quote.azurewebsites.net/'
 const quoteDisplayElement = document.getElementById('quoteDisplay')
 const quoteInputElement = document.getElementById('quoteInput')
 const timerElement = document.getElementById('timer')
@@ -36,7 +36,7 @@ async function getRandomQuote() {
 async function renderNewQuote() {
     const quote = await getRandomQuote()
     quoteDisplayElement.innerText = '';
-    quote.quote.split('').forEach(character => {
+    quote.text.split('').forEach(character => {
         const characterSpan = document.createElement('span')
         characterSpan.innerText = character
         quoteDisplayElement.appendChild(characterSpan)
